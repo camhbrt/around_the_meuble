@@ -3,6 +3,9 @@ const cors = require('cors');
 
 const app = express();
 
+const db = require("./app/models");
+db.sequelize.sync();
+
 // Using port 5173 for connection
 let corsOptions = {
     origin: 'http://localhost:5173'
@@ -24,3 +27,4 @@ const PORT = 5173;
 app.listen(PORT, () => {
     console.log(`Le serveur tourne sur le port ${PORT}`)
 });
+
