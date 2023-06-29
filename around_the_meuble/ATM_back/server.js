@@ -23,6 +23,9 @@ app.get('/', (request, resolve) => {
     resolve.json(({message : 'Welcome to AROUND THE MEUBLE'}))
 })
 
+require("./app/routes/meubles.routes")(app);
+require("./app/routes/users.routes")(app);
+
 const PORT = 5173;
 app.listen(PORT, () => {
     console.log(`Le serveur tourne sur le port ${PORT}`)
