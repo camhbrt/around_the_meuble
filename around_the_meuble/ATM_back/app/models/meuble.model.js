@@ -45,4 +45,5 @@ module.exports = (sequelize, Sequelize) => {
             }
         },
     })
+        return Meuble;
 }
