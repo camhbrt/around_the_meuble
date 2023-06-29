@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - devBack
-    paths:
-      - 'ATM_back/**'
+defaults:
+  run:
+    working-directory: ./around_the_meuble/ATM_back
 jobs:
   linux_job:
     runs-on: ubuntu-latest
