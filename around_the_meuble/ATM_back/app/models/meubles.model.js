@@ -13,6 +13,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull : false
         },
+        nom: {
+            type: Sequelize.STRING,
+            allowNull : false
+        },
         prix: {
             type: Sequelize.DECIMAL,
             allowNull : false
