@@ -1,9 +1,13 @@
 import React from 'react';
+import Thumbnail from './Thumbnail';
 
 const Imagebanner = () => {
+    const numbers = [1,2,3,4,5];
     return (
-        <div>
-            Bannière avec les images
+        <div className='flex'>
+            {numbers.map((number)=> (
+                <Thumbnail key={number} number={number}/>
+            ))} 
         </div>
     );
 };
