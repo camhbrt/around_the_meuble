@@ -1,5 +1,6 @@
 const db = require("../models");
 const Meubles = db.meubles;
+const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
     if (!req.body.type){
@@ -34,6 +35,20 @@ Meubles.create(meuble)
         err.message || "Une erreur a été détectée" 
     });
 });
+};
+
+exports.findAll = (req, res) =>{
+    const type = req.query.type
+    let condition = type ? {type:{[Op.like]: `%${type}%`}} : null;
+
+    Meubles.findAll({where: condition})
+        .then(data =>{
+            res.send(data);
+        })
+        res.status(500).send({
+            message:
+             err.message || "Une erreur a été détectée" 
+         });
 };
 
 
