@@ -45,10 +45,13 @@ exports.findAll = (req, res) =>{
         .then(data =>{
             res.send(data);
         })
-        res.status(500).send({
-            message:
-             err.message || "Une erreur a été détectée" 
-         });
-};
+        .catch(err =>{
+            res.status(500).send({
+               message:
+                err.message || "Une erreur a été détectée" 
+            });
+        });
+    };
+
 
 
