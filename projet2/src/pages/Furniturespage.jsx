@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from '../components/Header';
 import Filterbar from '../components/Filterbar';
+import Articlecard from '../components/Articlecard';
 import Footer from '../components/Footer';
 import { NavLink } from 'react-router-dom';
-import Articlecard from '../components/Articlecard';
 
 const Furniturespage = () => {
     return (

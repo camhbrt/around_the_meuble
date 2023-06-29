@@ -3,8 +3,8 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const Loginicon = () => {
     return (
-        <div>
-            <FaUserCircle/>
+        <div >
+            <FaUserCircle size='1.5rem'/>
         </div>
     );
 };
