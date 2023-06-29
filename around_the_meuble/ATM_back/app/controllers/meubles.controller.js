@@ -3,16 +3,16 @@ const Meubles = db.meubles;
 const Op = db.Sequelize.Op;
 
 exports.create = (req, res) => {
-    if (!req.body.type){
-        res.status(400).send({
-            message: "Il faut un type pour le meuble"
-        });
-        return;
-    }
+  if (!req.body.type) {
+    res.status(400).send({
+      message: "Il faut un type pour le meuble",
+    });
+    return;
+  }
 
-// Créer un meuble dans la base de données
+  // Créer un meuble dans la base de données
 
-const meuble= {
+  const meuble = {
     type: req.body.type,
     nom: req.body.nom,
     photo: req.body.photo,
@@ -22,36 +22,31 @@ const meuble= {
     matiere: req.body.matiere,
     dimensions: req.body.dimensions,
     stock: req.body.stock,
-    
-}
+  };
 
-Meubles.create(meuble)
-.then(data =>{
-    res.send(data);
-})
-.catch(err=>{
-    res.status(500).send({
-       message:
-        err.message || "Une erreur a été détectée" 
+  Meubles.create(meuble)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Une erreur a été détectée",
+      });
     });
-});
 };
 
-exports.findAll = (req, res) =>{
-    const type = req.query.type
-    let condition = type ? {type:{[Op.like]: `%${type}%`}} : null;
+//Création de la fonction qui permet de chercher les meubles par leurs types
+exports.findAll = (req, res) => {
+  const type = req.query.type;
+  let condition = type ? { type: { [Op.like]: `%${type}%` } } : null;
 
-    Meubles.findAll({where: condition})
-        .then(data =>{
-            res.send(data);
-        })
-        .catch(err =>{
-            res.status(500).send({
-               message:
-                err.message || "Une erreur a été détectée" 
-            });
-        });
-    };
-
-
-
+  Meubles.findAll({ where: condition })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Une erreur a été détectée",
+      });
+    });
+};
