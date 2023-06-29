@@ -3,7 +3,7 @@ import { BsFillCartFill } from 'react-icons/bs';
 
 const Carticon = () => {
     return (
-        <div>
+        <div className='px-4'>
             <BsFillCartFill />
         </div>
     );
