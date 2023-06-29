@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Filterbar from '../components/Filterbar';
 import Footer from '../components/Footer';
 
-const Gridpage = () => {
+const Furniturespage = () => {
     return (
         <div>
             <Header/>
@@ -14,4 +14,4 @@ const Gridpage = () => {
     );
 };
 
-export default Gridpage;
+export default Furniturespage;

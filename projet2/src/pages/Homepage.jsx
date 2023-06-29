@@ -7,7 +7,6 @@ import { NavLink } from 'react-router-dom';
 const Homepage = () => {
     return (
         <div>
-            <h1 className='text-blue-400'>coucou</h1>
         <Header/>
         <Hero/>
         <NavLink to='/furnitures'>Voir tous les meubles</NavLink>
