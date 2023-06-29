@@ -3,6 +3,7 @@ import Homepage from "./pages/Homepage"
 import Adminpage from "./pages/Adminpage";
 import Loginpage from "./pages/Loginpage"
 import Furniturespage from './pages/Furniturespage';
+import Singlefurniturepage from './pages/Singlefurniturepage';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path='/admin' element={<Adminpage/>}/>
       <Route path='/login' element={<Loginpage/>} />
       <Route path='/furnitures' element={<Furniturespage/>} />
+      <Route path='/singlefurniture' element={<Singlefurniturepage/>} />
 
     </Routes>
     
