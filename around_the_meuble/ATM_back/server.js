@@ -23,8 +23,8 @@ app.get('/', (request, resolve) => {
     resolve.json(({message : 'Welcome to AROUND THE MEUBLE'}))
 })
 
-require("./app/routes/meubles.routes")(app);
-require("./app/routes/users.routes")(app);
+require("./app/routes/meubles.route")(app);
+require("./app/routes/users.route")(app);
 
 const PORT = 5173;
 app.listen(PORT, () => {
