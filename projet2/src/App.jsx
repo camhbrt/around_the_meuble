@@ -5,6 +5,7 @@ import Loginpage from "./pages/Loginpage"
 import Furniturespage from './pages/Furniturespage';
 import Singlefurniturepage from './pages/Singlefurniturepage';
 import Signinpage from './pages/Signinpage';
+import Cartpage from './pages/Cartpage';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route path='/furnitures' element={<Furniturespage/>} />
       <Route path='/singlefurniture' element={<Singlefurniturepage/>} />
       <Route path='/signin' element={<Signinpage/>} />
+      <Route path='/cart' element={<Cartpage/>} />
 
 
     </Routes>

@@ -10,7 +10,7 @@ const Header = () => {
             <NavLink to='/' className='flex-auto'>Home(logo du site)</NavLink>
             <h1 className='flex-auto'>Around the meuble</h1>
             <NavLink to='/login'><Loginicon/></NavLink>
-            <Carticon/>
+            <NavLink to='/cart'><Carticon/></NavLink>
             
 
         </div>
