@@ -20,12 +20,13 @@ jobs:
           node-version: 'latest'
       - name: Shutdown Ubuntu MySQL (SUDO)
         run: sudo service mysql stop
+      - run: sudo apt install mariadb-server
+      - run: sudo systemctl start mariadb
       - uses: getong/mariadb-action@v1.1
         with: 
           mysql database: 'ATMDB'
           mysql root password: 'root'
       - run: sudo systemctl status mariadb
-      - run: sudo systemctl start mariadb
       - run: echo -e "DB_PASSWORD=root\nDB_USER=root\nDB_HOST=localhost\nDB_NAME=ATMDB" > .env
       - run: echo "The OS on the runner is $RUNNER_OS" 
       - run: node -v
