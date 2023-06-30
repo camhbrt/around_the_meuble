@@ -1,6 +1,7 @@
 name: atm_deployment
 run-name: ${{ github.actor }} is testing Around_the_meuble
 on: 
+  workflow_dispatch:
   push:
     branches:
       - devBack
