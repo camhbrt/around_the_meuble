@@ -28,7 +28,7 @@ const Loginpage = () => {
 
   <div className="w-1/2">
     <div className="h-screen flex justify-center items-center">
-    <div className="bg-rose-100 bg-cover bg-no-repeat mt-7" style={{backgroundImage: `url(${Loginbg})`}}>
+    <div className="bg-rose-100 bg-cover bg-no-repeat mt-7 shadow-lg" style={{backgroundImage: `url(${Loginbg})`}}>
       <div className="min-w-[450px] px-8">
         <div className="mb-12">
           <h2 className="text-3xl font-medium">Welcome Back!</h2>
