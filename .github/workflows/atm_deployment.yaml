@@ -22,7 +22,6 @@ jobs:
         run: sudo service mysql stop
       - uses: getong/mariadb-action@v1.1
         with: 
-          host port: 5173
           mysql database: 'ATMDB'
           mysql root password: 'root'
       - run: echo -e "DB_PASSWORD=root\nDB_USER=root\nDB_HOST=localhost\nDB_NAME=ATMDB" > .env
