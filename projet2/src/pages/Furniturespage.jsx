@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Filterbar from '../components/Filterbar';
 import Footer from '../components/Footer';
 import { NavLink } from 'react-router-dom';
+import Articlecard from '../components/Articlecard';
 
 const Furniturespage = () => {
     return (
@@ -10,6 +11,7 @@ const Furniturespage = () => {
             <Header/>
             <Filterbar/>
             <h1 className='text-blue-500'>Et voilà tous nos meubles</h1>
+            <Articlecard/>
             <NavLink to='/singlefurniture'>clique ici pour avoir le détail d'un meuble</NavLink>
 
             <Footer/>

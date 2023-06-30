@@ -3,12 +3,12 @@ import React from 'react';
 const Filterbar = () => {
     return (
         <div>
-            <ul>
-                <li>filtres :</li>
-                <li>catégories</li>
-                <li>couleurs</li>
-                <li>matières</li>
-                <li>prix</li>
+            <ul className='flex'>
+                <li className='flex-auto'>filtres :</li>
+                <li className='flex-auto'>catégories</li>
+                <li className='flex-auto'>couleurs</li>
+                <li className='flex-auto'>matières</li>
+                <li className='flex-auto'>prix</li>
             </ul>
         </div>
     );
