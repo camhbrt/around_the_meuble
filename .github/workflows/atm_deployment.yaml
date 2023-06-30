@@ -24,6 +24,8 @@ jobs:
         with: 
           mysql database: 'ATMDB'
           mysql root password: 'root'
+      - run: sudo systemctl status mariadb
+      - run: sudo systemctl start mariadb
       - run: echo -e "DB_PASSWORD=root\nDB_USER=root\nDB_HOST=localhost\nDB_NAME=ATMDB" > .env
       - run: echo "The OS on the runner is $RUNNER_OS" 
       - run: node -v
