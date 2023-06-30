@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Loginform from '../components/Loginform';
 import Loginbg from '../assets/Loginbg.jpg'
-import Subsciptionform from '../components/Subscriptionform';
+import Subscriptionform from '../components/Subscriptionform';
 
 const Loginpage = () => {
     return (

@@ -6,7 +6,7 @@ const Loginform = () => {
         <div>
             <form action="">
                     <div className='mb-3'>
-                        <img src="" alt="Profile picture" />
+                        <img src="/loginlogo.png" alt="Profile picture" className='rounded-t-3xl'/>
                     </div>
                     <div className='mb-3'>
                         <label className='font-mediu mb-2 flex'>User Name </label>
