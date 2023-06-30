@@ -1,14 +1,17 @@
 import React from 'react';
+import Favbutton from './Favbutton';
+import Addtocartbutton from './Addtocartbutton';
+import { NavLink } from 'react-router-dom';
 
 const Articlecard = () => {
     return (
-        <div className='bg-slate-400 w-64 m-5 rounded-3xl' >
-            <img src="../../public/pioupiou.jpg" alt="fauteuil pioupiou" className='rounded-t-3xl' />
-            <div className='mb-5 px-5 p-2' >
+        <div className='w-64 m-5' >
+            <NavLink to='/singlefurniture'><img src="../../public/pioupiou.jpg" alt="fauteuil pioupiou" className='rounded-3xl' /></NavLink>
+            <div className='mb-5 px-5 p-2 bg-slate-400 rounded-3xl' >
                 <p>nom du meuble</p>
                 <p>prix</p>
-                <p>bouton favori</p>
-                <p>bouton ajouter au panier</p>
+                <Favbutton/>
+                <Addtocartbutton/>
             </div>
         </div>
     );

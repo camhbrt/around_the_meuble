@@ -2,14 +2,14 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const Adminpage = () => {
+const Cartpage = () => {
     return (
         <div>
             <Header/>
-            <h1>Adminpage</h1>
+            <p>mon panier</p>
             <Footer/>
         </div>
     );
 };
 
-export default Adminpage;
+export default Cartpage;
