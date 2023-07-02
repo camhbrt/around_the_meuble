@@ -3,7 +3,6 @@ import Header from '../components/Header';
 import Filterbar from '../components/Filterbar';
 import Articlecard from '../components/Articlecard';
 import Footer from '../components/Footer';
-import { NavLink } from 'react-router-dom';
 
 const Furniturespage = () => {
     return (
@@ -11,8 +10,13 @@ const Furniturespage = () => {
             <Header/>
             <Filterbar/>
             <h1 className='text-blue-500'>Et voilà tous nos meubles</h1>
-            <Articlecard/>
-            <NavLink to='/singlefurniture'>clique ici pour avoir le détail d'un meuble</NavLink>
+            
+            <div className="flex justify-center items-center h-full">
+                        <div className="bg-gray-200 p-2 justify-center">
+                            <Articlecard />
+                        </div>
+            
+            </div>
 
             <Footer/>
         </div>
