@@ -11,7 +11,7 @@ const Articlecard = (props) => {
   <div className="grid lg:grid-cols-3 gap-4 justify-center">
     {cardList.map((card, index) => (
       <div key={index} className="mb-5 px-5 p-2 bg-slate-400 rounded-3xl">
-        <NavLink to={`/singlefurniture/${card.img}`}>
+        <NavLink to={`/singlefurniture`}>
           <img
             src={card.img}
             alt={card.title}
