@@ -7,7 +7,7 @@ import Pioupiou from '/public/images/pioupiou.jpg';
 
 import { NavLink } from 'react-router-dom';
 
-const Singlefurniturepage = () => {
+const Singlefurniturepage = ({card}) => {
     return (
         <div>
             <Header/>
@@ -68,15 +68,6 @@ const Singlefurniturepage = () => {
     </div>
    </div>
   </div>
-
-
-
-
-
-
-
-
-
 
             <NavLink to='/furnitures'>clique ici pour revenir en arrière</NavLink>
             <Footer/>

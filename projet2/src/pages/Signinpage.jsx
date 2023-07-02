@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import Signinform from '../components/Signinform';
+import Subscriptionform from '../components/Subscriptionform';
 import Footer from '../components/Footer';
 import { NavLink } from 'react-router-dom';
 
@@ -9,8 +9,8 @@ const Signinpage = () => {
         <div>
             <Header/>
             <h1>S'inscrire</h1>
-            <Signinform/>
-            <NavLink to='/login'>déjà un compte ? Connectez-vous</NavLink>
+            <Subscriptionform/>
+            <NavLink to='/login'>Déjà un compte ? Connectez-vous</NavLink>
             <Footer/>
         </div>
     );
