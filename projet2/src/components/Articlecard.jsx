@@ -4,13 +4,13 @@ import Addtocartbutton from './Addtocartbutton';
 import cardList from '../pages/data.js';
 import { NavLink } from 'react-router-dom';
 
-const Articlecard = (props) => {
+const Articlecard = () => {
     return (
 
 <div className="m-5">
   <div className="grid lg:grid-cols-3 gap-4 justify-center">
     {cardList.map((card, index) => (
-      <div key={index} className="mb-5 px-5 p-2 bg-slate-400 rounded-3xl">
+      <div key={index} className="mb-5 px-5 p-5 bg-slate-300 rounded-3xl shadow-lg">
         <NavLink to={`/singlefurniture`}>
           <img
             src={card.img}
@@ -20,14 +20,16 @@ const Articlecard = (props) => {
             width="400"
           />
           <p className="items-center">
-            Pour avoir plus de détails sur ce meuble, cliquez ici
-            <span className="text-blue-700 cursor-pointer">Cliquez ici</span>
+            Pour avoir plus de détails sur ce meuble 
+            <span className="text-blue-700 cursor-pointer"> Cliquez ici</span>
           </p>
         </NavLink>
         <p>{card.title}</p>
         <p>{card.price}</p>
-        <Favbutton />
+        <div className='flex justify-between mb-6'>
         <Addtocartbutton />
+        <Favbutton />
+        </div>
       </div>
     ))}
   </div>

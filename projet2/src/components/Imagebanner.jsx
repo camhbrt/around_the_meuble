@@ -18,14 +18,14 @@ const Imagebanner = () => {
 
   return (
 
-      <div className='relative flex items-center'>
+      <div className='bg-gray-200 p-2 justify-center relative flex items-center'>
         
         <MdChevronLeft className='opacity-50 cursor-pointer hover:opacity-100' 
         onClick={slideLeft} size={150}
         />
         <div
           id='slider'
-          className='w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth scrollbar-hide'
+          className='w-full h-full overflow-x-scroll scroll mb-5 px-5 p-2 bg-slate-300 rounded-3xl shadow-lg whitespace-nowrap scroll-smooth scrollbar-hide'
         >
         {cardList.map((card, index) => (
           <Thumbnail key={index} card={card} />
