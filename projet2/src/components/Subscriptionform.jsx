@@ -60,7 +60,7 @@ const Subscriptionform = () => {
                     </div>
                     <div className='mb-3'>
                         <label className='font-mediu mb-2 flex'>Password </label>
-                        <input value={password} type="text" placeholder='Enter your Password' onChange={(event) => setPassword(event.target.value)} className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
+                        <input value={password} type="password" placeholder='Enter your Password' onChange={(event) => setPassword(event.target.value)} className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
                     </div>
                     <div className='mb-3'>
                         <label className='font-mediu mb-2 flex'>Last Name </label>
