@@ -25,6 +25,8 @@ app.get('/', (request, resolve) => {
 
 require("./app/routes/meubles.route")(app);
 require("./app/routes/users.route")(app);
+// require("./app/routes/userfav.route")(app);
+
 
 const PORT = 5173;
 app.listen(PORT, () => {
