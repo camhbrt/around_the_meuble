@@ -26,7 +26,7 @@ app.get('/', (request, resolve) => {
 require("./app/routes/meubles.route")(app);
 require("./app/routes/users.route")(app);
 
-const PORT = 5173;
+const PORT = 5174;
 app.listen(PORT, () => {
     console.log(`Le serveur tourne sur le port ${PORT}`)
 });

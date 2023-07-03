@@ -27,6 +27,7 @@ const Subscriptionform = () => {
         try {
         const response = await fetch(apiUrl, {
             method: "POST",
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 email: email,
                 password: password,
@@ -35,7 +36,7 @@ const Subscriptionform = () => {
             })
         })
         let responseJson = await response.json();
-        if (responseJson.status == 200){
+        if (response.status == 200){
             setEmail("");
             setPassword(""),
             setFirstName(""),
@@ -58,17 +59,19 @@ const Subscriptionform = () => {
                         <input value={email} type="text" placeholder='Enter your Email' onChange={(event) => setEmail(event.target.value)} className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
                     </div>
                     <div className='mb-3'>
-                        <label className='font-mediu mb-2 flex'>First Name </label>
-                        <input value={firstName} type="text" placeholder='Enter your First Name' onChange={(event) => setFirstName(event.target.value)} className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
+                        <label className='font-mediu mb-2 flex'>Password </label>
+                        <input value={password} type="text" placeholder='Enter your Password' onChange={(event) => setPassword(event.target.value)} className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
                     </div>
                     <div className='mb-3'>
                         <label className='font-mediu mb-2 flex'>Last Name </label>
                         <input value={lastName} type="text" placeholder='Enter your Last Name' onChange={(event) => setLastName(event.target.value)} className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
                     </div>
                     <div className='mb-3'>
-                        <label className='font-mediu mb-2 flex'>Password </label>
-                        <input value={password} type="text" placeholder='Enter your Password' onChange={(event) => setPassword(event.target.value)} className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
+                        <label className='font-mediu mb-2 flex'>First Name </label>
+                        <input value={firstName} type="text" placeholder='Enter your First Name' onChange={(event) => setFirstName(event.target.value)} className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
                     </div>
+                    
+                    
                     {/* <div className='mb-3'>
                         <label className='font-mediu mb-2 flex'>Confirm Password </label>
                         <input id="confirmpassword" type="text" placeholder='Confirm your Password' className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
