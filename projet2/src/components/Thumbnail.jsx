@@ -1,11 +1,17 @@
 import React from 'react';
 
-const Thumbnail = ({number}) => {
-    return (
-        <div className='bg-purple-600 w-12 h-12 m-5 flex-auto'>
-            <p>{number}</p>
-        </div>
-    );
+const Thumbnail = ({ card }) => {
+  return (
+    <>
+      <img
+        className='w-[280px] object-cover rounded-3xl inline-block p-3 cursor-pointer hover:scale-105 ease-in-out duration-300'
+        src={card.img}
+        alt={card.title}
+      />
+    </>
+  );
 };
 
 export default Thumbnail;
+
+

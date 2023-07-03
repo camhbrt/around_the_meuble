@@ -1,19 +1,40 @@
 import React from 'react';
 import Favbutton from './Favbutton';
 import Addtocartbutton from './Addtocartbutton';
+import cardList from '../pages/data.js';
 import { NavLink } from 'react-router-dom';
 
 const Articlecard = () => {
     return (
-        <div className='w-64 m-5' >
-            <NavLink to='/singlefurniture'><img src="../../public/pioupiou.jpg" alt="fauteuil pioupiou" className='rounded-3xl' /></NavLink>
-            <div className='mb-5 px-5 p-2 bg-slate-400 rounded-3xl' >
-                <p>nom du meuble</p>
-                <p>prix</p>
-                <Favbutton/>
-                <Addtocartbutton/>
-            </div>
+
+<div className="m-5">
+  <div className="grid lg:grid-cols-3 gap-4 justify-center">
+    {cardList.map((card, index) => (
+      <div key={index} className="mb-5 px-5 p-5 bg-slate-300 rounded-3xl shadow-lg">
+        <NavLink to={`/singlefurniture`}>
+          <img
+            src={card.img}
+            alt={card.title}
+            className="rounded-3xl"
+            height="300"
+            width="400"
+          />
+          <p className="items-center">
+            Pour avoir plus de détails sur ce meuble 
+            <span className="text-blue-700 cursor-pointer"> Cliquez ici</span>
+          </p>
+        </NavLink>
+        <p>{card.title}</p>
+        <p>{card.price}</p>
+        <div className='flex justify-between mb-6'>
+        <Addtocartbutton />
+        <Favbutton />
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
     );
 };
 

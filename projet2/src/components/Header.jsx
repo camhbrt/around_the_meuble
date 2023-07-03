@@ -6,13 +6,11 @@ import Carticon from './Carticon';
 
 const Header = () => {
     return (
-        <div className='bg-yellow-300 flex p-2'>
+        <div className='bg-slate-400 flex p-2'>
             <NavLink to='/' className='flex-auto'>Home(logo du site)</NavLink>
             <h1 className='flex-auto'>Around the meuble</h1>
             <NavLink to='/login'><Loginicon/></NavLink>
             <NavLink to='/cart'><Carticon/></NavLink>
-            
-
         </div>
     );
 };
