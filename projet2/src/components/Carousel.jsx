@@ -3,6 +3,8 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Carousel = ({children: slides}) => {
 
+    const [curr, setCurr]
+
 
     
     return (

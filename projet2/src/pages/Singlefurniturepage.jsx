@@ -2,9 +2,9 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { NavLink } from 'react-router-dom';
-import Imagecaroussel from '../components/Imagecaroussel';
 import Furnituredetail from '../components/Furnituredetail';
-import Carousel from '../components/Carousel';
+// import Imagecaroussel from '../components/Imagecaroussel';
+// import Carousel from '../components/Carousel';
 
 const Singlefurniturepage = () => {
 
@@ -24,12 +24,13 @@ const Singlefurniturepage = () => {
                 <Furnituredetail/>
                 {/* <Imagecaroussel slides={slides}/> */}
                 <div className='max-w-lg'>
-                <Carousel>
-                    {slides.map((s)=>(
-                        <img src={s.url}/>
-                    ))}
-                </Carousel>
-            
+                    {/* <Imagecaroussel/> */}
+                    {/* <Carousel>
+                        {slides.map((s)=>(
+                            <img src={s.url}/>
+                        ))} */}
+                    {/* </Carousel> */}
+                
                 </div>
             </div>
             <Footer/>
