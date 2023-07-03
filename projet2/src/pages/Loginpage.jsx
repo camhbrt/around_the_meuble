@@ -5,6 +5,10 @@ import Footer from '../components/Footer';
 import Loginform from '../components/Loginform';
 import Loginbg from '../assets/Loginbg.jpg';
 import Subscriptionform from '../components/Subscriptionform';
+import Backicon from '../components/Backicon';
+
+import { NavLink } from 'react-router-dom';
+
 
 const Loginpage = () => {
     return (
@@ -41,6 +45,7 @@ const Loginpage = () => {
   </div>
 </div>
 
+<NavLink to='/'><Backicon/></NavLink>
             <Footer/>
         </div>
     );

@@ -14,3 +14,4 @@ const Thumbnail = ({ card }) => {
 
 export default Thumbnail;
 
+

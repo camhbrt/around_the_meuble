@@ -11,8 +11,6 @@ const Header = () => {
             <h1 className='flex-auto'>Around the meuble</h1>
             <NavLink to='/login'><Loginicon/></NavLink>
             <NavLink to='/cart'><Carticon/></NavLink>
-            
-
         </div>
     );
 };

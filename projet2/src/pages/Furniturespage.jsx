@@ -4,6 +4,9 @@ import Filterbar from '../components/Filterbar';
 import Articlecard from '../components/Articlecard';
 import ScrollToTop from "react-scroll-to-top";
 import Footer from '../components/Footer';
+import Backicon from '../components/Backicon';
+
+import { NavLink } from 'react-router-dom';
 
 const Furniturespage = () => {
     return (
@@ -17,8 +20,8 @@ const Furniturespage = () => {
                 <div style={{ marginTop: "200vh" }}>
                     <ScrollToTop smooth className="px-1.5 rounded-3xl shadow-lg" />
                 </div>
-
             </div>
+            <NavLink to='/'> <Backicon/> </NavLink>
             <Footer />
         </div>
     );
