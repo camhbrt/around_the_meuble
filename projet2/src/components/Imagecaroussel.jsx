@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import {AiFillLeftCircle} from 'react-icons/Ai';
-import {AiFillRightCircle} from 'react-icons/Ai'
+import {AiFillLeftCircle} from 'react-icons/ai';
+import {AiFillRightCircle} from 'react-icons/ai'
 
 const Imagecaroussel = ({slides}) => {
 
@@ -28,10 +28,10 @@ const Imagecaroussel = ({slides}) => {
     }
 
     return (
-        <div className='bg-teal-300  rounded-xl m-5 p-5 flex-auto'>
+        <div className='bg-teal-300 rounded-xl m-5 p-5 flex-auto'>
             <p className='absolute z-50 text-black top-72 cursor-pointer text-5xl opacity-50' onClick={goToPrevious}><AiFillLeftCircle/></p>
             <p className='absolute z-50 text-black top-72 right-48 cursor-pointer text-5xl opacity-50' onClick={goToNext}><AiFillRightCircle/></p>
-            <img src={slides[currentIndex].url} alt="fauteuil pioupiou" className='rounded-3xl h-96 relative' />
+            <img src={slides[currentIndex].url} alt="fauteuil pioupiou" className='rounded-3xl h-96 relative flex items-center'/>
             <div className='flex justify-center'>
                 {slides.map((slide, slideIndex) =>(
                     <div key={slideIndex} className='m-1 cursor-pointer text-3xl' onClick={()=>goToSlide(slideIndex)}>•</div>
