@@ -2,16 +2,18 @@ const dbConfig = require("../db.config.js");
 
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-    host: dbConfig.HOST,
-    dialect: dbConfig.dialect,
-    operatorsAliases: false,
+  host: dbConfig.HOST,
+  dialect: dbConfig.dialect,
+  operatorsAliases: false,
 
-    pool: {
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
-    }
+  port: "3306",
+
+  pool: {
+    max: 5,
+    min: 0,
+    acquire: 30000,
+    idle: 10000,
+  },
 });
 
 const db = {};
@@ -19,8 +21,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.users= require("./users.model.js")(sequelize, Sequelize);
-db.meubles= require("./meubles.model.js")(sequelize, Sequelize);
-
+db.users = require("./users.model.js")(sequelize, Sequelize);
+db.meubles = require("./meubles.model.js")(sequelize, Sequelize);
 
 module.exports = db;
