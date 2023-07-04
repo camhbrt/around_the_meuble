@@ -36,20 +36,22 @@ const Subscriptionform = () => {
             })
         })
         let responseJson = await response.json();
+        console.log(response.status)
         if (response.status == 200){
             setEmail("");
             setPassword(""),
             setFirstName(""),
             setLastName(""),
             setMessage("New user created successfully")
-        } else if (response.status == 409){
-            console.log(response.type)
-            console.log(response.body)
-            console.log(response.headers)
-            setMessage("Email already exists")
-        } else {
-            console.log(response.status)
-            setMessage("An error occured while creating new user")
+        } 
+        // else if (response.status == 409){
+        //     console.log(response.type)
+        //     console.log(response.body)
+        //     console.log(response.headers)
+        //     setMessage("Email already exists")
+        else {
+        console.log(response.status)
+        setMessage("An error occured while creating new user")
         }
         }
         catch (error) {
