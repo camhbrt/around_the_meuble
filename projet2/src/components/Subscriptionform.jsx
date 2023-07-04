@@ -43,6 +43,9 @@ const Subscriptionform = () => {
             setLastName(""),
             setMessage("New user created successfully")
         } else if (response.status == 409){
+            console.log(response.type)
+            console.log(response.body)
+            console.log(response.headers)
             setMessage("Email already exists")
         } else {
             console.log(response.status)

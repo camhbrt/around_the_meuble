@@ -2,7 +2,7 @@ const db = require("../models");
 const Users = db.users;
 
 async function emailExists() {
-  await Users.findOne({ 
+  let result = await Users.findOne({ 
     where: { email: 'email'}
   })
 };
