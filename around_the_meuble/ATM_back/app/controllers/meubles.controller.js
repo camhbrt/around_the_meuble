@@ -55,7 +55,7 @@ exports.findAllByType = (req, res) => {
 //Création de la fonction qui permet de chercher les meubles par leurs IDs
 exports.findAllById = (req, res) => {
   const id = req.query.id;
-  let condition = id ? { id: { [Op.like]: `%${id}%` } } : null;
+  let condition = id ? { id: { [Op.eq]: `%${id}%` } } : null;
 
   Meubles.findAllById({ where: condition })
     .then((data) => {
@@ -111,3 +111,20 @@ exports.updateMeuble = async (req, res) => {
     res.status(500).json({ message: 'Une erreur s\'est produite lors de la mise à jour du statut du meuble.' });
   }
 };
+
+//Création de la fonction qui permet de SUPPRIMER un meuble
+exports.deleteMeuble = async (req, res) => {
+  const id = req.query.id;
+  let condition = id ? { id: { [Op.eq]: `%${id}%` } } : null;
+  
+  Meubles.destroy({where: condition})
+    .then((data) => {
+      res.send(data);
+      res.json({ message: 'Le meuble à bien été supprimé' });
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Une erreur a été détectée",
+      });
+    });
+  }

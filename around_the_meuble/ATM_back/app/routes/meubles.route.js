@@ -18,6 +18,9 @@ module.exports = app => {
     // Une route pour modifier les meubles 
     router.put("/", meubles.update);
 
+    // Une route pour supprimer un meuble
+    router.delete("/", meubles.deleteMeuble);
+
     
     // On détermine l'URL pour notre API 
     app.use('/api/meubles', router);
