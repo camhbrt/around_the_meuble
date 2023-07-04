@@ -51,3 +51,20 @@ exports.findAll = (req, res) => {
       });
     });
 };
+
+//Création de la fonction qui permet de chercher les meubles par leurs ID
+
+exports.findByID = (req, res) => {
+  const id = req.query.id
+  let condition = id ? {id: {[Op.like]: `%${id}%`}} : null
+
+  Meubles.findByID({ where: condition })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Une erreur a été détectée",
+      });
+    });
+}
