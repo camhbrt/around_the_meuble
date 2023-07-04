@@ -37,11 +37,11 @@ exports.create = (req, res) => {
 };
 
 //Création de la fonction qui permet de chercher les meubles par leurs types
-exports.findAll = (req, res) => {
+exports.findAllByType = (req, res) => {
   const type = req.query.type;
   let condition = type ? { type: { [Op.like]: `%${type}%` } } : null;
 
-  Meubles.findAll({ where: condition })
+  Meubles.findAllByType({ where: condition })
     .then((data) => {
       res.send(data);
     })
@@ -68,4 +68,38 @@ exports.findAllById = (req, res) => {
     });
 };
 
+//Création de la fonction qui permet de chercher TOUT les meubles
+exports.findAll = (req, res) => {
 
+  Meubles.findAll()
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Une erreur a été détectée",
+      });
+    });
+};
+
+
+//Création de la fonction qui permet de modifier un meuble
+exports.update = (req, res) => {
+  const id = req.query.id;
+  let condition = id ? { id: { [Op.like]: `%${id}%` } } : null;
+
+  Meubles.update()
+}
+
+ // exports.updateMeuble = (req, res) => {
+ //
+ //   const id = req.query.id;
+ //   const status = req.body;
+ //
+ // const meuble = await Meubles.findByPk(id);
+ // if (!meuble) {
+ // return res.status(404).json({ message: 'Meuble introuvable.' });
+ //}
+ //
+ // meuble.status = status;
+ //
