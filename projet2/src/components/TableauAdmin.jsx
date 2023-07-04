@@ -4,11 +4,16 @@ const TableauAdmin = () => {
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5174/api/meubles/allmeubles").then((response) =>
-      setItem(response.data)
-    );
-  }, []);
-  console.log(item);
+    const fetchData = async () => {
+      const response = await fetch("http://localhost:5174/api/meubles/allmeubles");
+      const newData = await response.json();
+      setItem(newData);
+    };
+
+    fetchData();
+    
+    }, []);
+    console.log(item);
 
   return (
     <div>
