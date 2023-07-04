@@ -4,7 +4,7 @@ const TableauAdmin = () => {
   const [item, setItem] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5174/api/meubles").then((response) =>
+    fetch("http://localhost:5174/api/meubles/allmeubles").then((response) =>
       setItem(response.data)
     );
   }, []);

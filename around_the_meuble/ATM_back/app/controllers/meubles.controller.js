@@ -50,3 +50,16 @@ exports.findAll = (req, res) => {
       });
     });
 };
+
+//Création de la fonction qui récupère la table dans son intégralité
+exports.findAllMeubles = (req, res) => {
+  Meubles.findAll()
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: err.message || "Une erreur a été détectée",
+      });
+    });
+};
