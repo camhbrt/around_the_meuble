@@ -84,22 +84,30 @@ exports.findAll = (req, res) => {
 
 
 //Création de la fonction qui permet de modifier un meuble
-exports.update = (req, res) => {
+
+exports.updateMeuble = async (req, res) => {
+  // Chercher l'ID du meuble
   const id = req.query.id;
-  let condition = id ? { id: { [Op.like]: `%${id}%` } } : null;
-
-  Meubles.update()
-}
-
- // exports.updateMeuble = (req, res) => {
- //
- //   const id = req.query.id;
- //   const status = req.body;
- //
- // const meuble = await Meubles.findByPk(id);
- // if (!meuble) {
- // return res.status(404).json({ message: 'Meuble introuvable.' });
- //}
- //
- // meuble.status = status;
- //
+  // Ancienne valeur pour le statut
+  const status = req.query.status;
+  
+  try {
+    // Vérifier l'existence du meuble
+    const meuble = await Meubles.findByPk(id);
+    if (!meuble) {
+      return res.status(404).json({ message: 'Meuble introuvable.' });
+    }
+  
+    // Modifier la valeur du statut
+    meuble.status = status;
+  
+    // Enregistrer les modifications dans la table meubles
+    await meuble.save();
+  
+    // Réponse
+    res.json({ message: 'Le statut du meuble a été mis à jour.' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Une erreur s\'est produite lors de la mise à jour du statut du meuble.' });
+  }
+};
