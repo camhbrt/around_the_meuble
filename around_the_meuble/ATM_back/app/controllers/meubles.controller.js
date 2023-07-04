@@ -22,6 +22,7 @@ exports.create = (req, res) => {
     matiere: req.body.matiere,
     dimensions: req.body.dimensions,
     stock: req.body.stock,
+    status: "Article à valider",
   };
 
   Meubles.create(meuble)
