@@ -52,8 +52,11 @@ module.exports = (sequelize, Sequelize) => {
                 key: 'id'
             }
         },
-    }, {
-        timestamps: false
-    })
-        return Meubles;
-}
+      },
+    },
+    {
+      timestamps: false,
+    }
+  );
+  return Meubles;
+};

@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+table,
+td,
+th {
+  border: 1px solid;
+}
+
+button {
+  border: 1px;
+  background: rgb(234, 217, 217);
+}
