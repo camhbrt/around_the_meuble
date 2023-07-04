@@ -52,13 +52,12 @@ exports.findAll = (req, res) => {
     });
 };
 
-//Création de la fonction qui permet de chercher les meubles par leurs ID
+//Création de la fonction qui permet de chercher les meubles par leurs IDs
+exports.findAllById = (req, res) => {
+  const id = req.query.id;
+  let condition = id ? { id: { [Op.like]: `%${id}%` } } : null;
 
-exports.findByID = (req, res) => {
-  const id = req.query.id
-  let condition = id ? {id: {[Op.like]: `%${id}%`}} : null
-
-  Meubles.findByID({ where: condition })
+  Meubles.findAllById({ where: condition })
     .then((data) => {
       res.send(data);
     })
@@ -67,4 +66,6 @@ exports.findByID = (req, res) => {
         message: err.message || "Une erreur a été détectée",
       });
     });
-}
+};
+
+

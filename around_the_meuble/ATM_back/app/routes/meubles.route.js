@@ -9,6 +9,9 @@ module.exports = app => {
     // Une route pour obtenir toutes les données des meubles par type 
     router.get("/", meubles.findAll);
 
+    // Une route pour obtenir toutes les données des meubles par IDs 
+    router.get("/", meubles.findAllById);
+
     // On détermine l'URL pour notre API 
     app.use('/api/meubles', router);
 }
