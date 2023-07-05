@@ -1,20 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+let apiUrl = 'http://localhost:5174/api/users'
 
 const Loginform = () => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    let postLogin = async (event) => {
+        event.preventDefault()
+        try {
+            const response = await fetch(apiUrl, {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            })
+        }
+        catch (error){
+            console.log("Error :", error)
+        }
+    }
     return (
         <div>
-            <form action="">
+            <form onSubmit={postLogin}>
                     <div className='mb-3'>
                         <img src="/loginlogo.png" alt="Profile picture" className='rounded-t-3xl'/>
                     </div>
                     <div className='mb-3'>
-                        <label className='font-mediu mb-2 flex'>User Name </label>
-                        <input type="text" placeholder='Enter your User Name' className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
+                        <label className='font-mediu mb-2 flex'>Email</label>
+                        <input type="text" onChange={event => setEmail(event.target.value)} placeholder='Enter your Email' className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
                     </div>
                     <div className='mb-3'>
                         <label className='font-mediu mb-2 flex'>Password </label>
-                        <input type="text" placeholder='Enter your Password' className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
+                        <input type="password" onChange={event => setPassword(event.target.value)} placeholder='Enter your Password' className='w-full border rounded-md bg-transparent border-gray-400 p-3'/>
                     </div>
                     <div className='flex justify-between mb-6'>
                         <label>
