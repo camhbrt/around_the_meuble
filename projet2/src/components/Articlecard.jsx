@@ -19,6 +19,9 @@ const Articlecard = () => {
             height="300"
             width="400"
           />
+          <div>
+              {card.id}
+          </div>
           <p className="items-center">
             Pour avoir plus de détails sur ce meuble 
             <span className="text-blue-700 cursor-pointer"> Cliquez ici</span>

@@ -1,33 +1,22 @@
 const db = require("../models");
 const Users = db.users;
+
  // import du module bcrypt (bibliothèque de hachage de mot de passe pour les crypter)
  const bcrypt = require('bcrypt');
 
  // import du module jsonwebtoken utilisé pour créer des tokens d'authentification : JWT (JSON Web Token)
  const jwt = require('jsonwebtoken');
 
-async function emailExists() {
-  await Users.findOne({ 
-    where: { email: 'email'}
-  })
-};
-
-const hashPassword = async (password) => 
+const hashPassword = async (password) =>
 {await bcrypt.hash(password, 10)}
 
-const findUser = async (user) => 
+const findUser = async (user) =>
 {await Users.findOne({where: {email: user}})}
 
-const comparePassword = async (password, hashPassword) => 
+const comparePassword = async (password, hashPassword) =>
 {await bcrypt.compare(password, hashPassword)}
 
-exports.create = (req, res) => {
-  // if (emailExists){
-  //   res.status(409).send({
-  //     message: 'Email already registered'
-  //   })
-  //   return;
-  // } else 
+ exports.create = (req, res) => {
   if (!req.body.email) {
     res.status(400).send({
       message: "Entrez un Email",

@@ -5,6 +5,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     host: dbConfig.HOST,
     dialect: dbConfig.dialect,
     operatorsAliases: false,
+    port:"3306",
 
     pool: {
         max: 5,
@@ -21,6 +22,9 @@ db.sequelize = sequelize;
 
 db.users= require("./users.model.js")(sequelize, Sequelize);
 db.meubles= require("./meubles.model.js")(sequelize, Sequelize);
+// db.userfav= require("./userfav.model.js")(sequelize, Sequelize);
+
+db.meubles.belongsToMany(db.users, {through: "UserFav"});
 
 
 module.exports = db;

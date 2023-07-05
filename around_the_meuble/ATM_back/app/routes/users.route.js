@@ -3,10 +3,12 @@ module.exports = app => {
 
     let router = require("express").Router();
 
-    // Une route pour créer un nouveau user 
+    // Une route pour créer un nouveau user
     router.post("/", users.create);
 
-    // router.post("/login", users.getToken)
-    // On détermine l'URL pour notre API 
+    // Une route get pour récupérer un token (pour se connecter)
+    router.get("/login", users.getToken);
+
+    // On détermine l'URL pour notre API
     app.use('/api/users', router);
 }
