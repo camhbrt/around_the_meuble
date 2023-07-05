@@ -16,7 +16,7 @@ module.exports = app => {
     router.get("/", meubles.findAllById);
 
     // Une route pour modifier les meubles 
-    router.put("/", meubles.update);
+    //router.put("/", meubles.update);
 
     // Une route pour supprimer un meuble
     router.delete("/", meubles.deleteMeuble);
