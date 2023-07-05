@@ -3,7 +3,7 @@ module.exports = app => {
 
     let router = require("express").Router();
 
-    // Une route pour créer un nouveau meuble 
+    // Une route pour créer un nouveau user 
     router.post("/", users.create);
 
     // router.post("/login", users.getToken)
