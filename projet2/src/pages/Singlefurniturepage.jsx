@@ -3,11 +3,23 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Pioupiou from '/public/images/pioupiou.jpg';
+import Pioupiou2 from '/public/images/pioupiou2.jpg';
+import Pioupiou3 from '/public/images/pioupiou3.jpg';
+import Pioupiou4 from '/public/images/pioupiou4.jpg';
+import Carousel from '../components/Carousel';
 
 import { NavLink } from 'react-router-dom';
 import Backicon from '../components/Backicon';
 
 const Singlefurniturepage = () => {
+
+    const slides = [
+        {url: `${Pioupiou}`, title: 'pioupiou'},
+        {url: `${Pioupiou2}`, title: 'pioupiou2'},
+        {url: `${Pioupiou3}`, title: 'pioupiou3'},
+        {url: `${Pioupiou4}`, title: 'pioupiou4'},
+    ]
+
   return (
     <div>
       <Header />
@@ -16,8 +28,9 @@ const Singlefurniturepage = () => {
       <div className="flex justify-center">
           <div className="h-screen flex justify-center items-center">
             <div className="max-w-sm w-full lg:max-w-full lg:flex">
-              <div className="h-80 lg:h-auto lg:w-80 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: `url(${Pioupiou})` }} title="Fauteuil pioupiou"></div>
-              <div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+      <Carousel slides={slides}/>
+              {/* <div className="h-80 lg:h-auto lg:w-80 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style={{ backgroundImage: `url(${Pioupiou})` }} title="Fauteuil pioupiou"></div> */}
+              <div className=" bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
                 <div className="mb-40">
                   <p className="text-sm text-gray-600 flex items-center">
                     <svg className="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -25,14 +38,14 @@ const Singlefurniturepage = () => {
                     </svg>
                     Pseudo du propriétaire
                   </p>
-                  <br />
+                  {/* <br /> */}
                   <div className="text-gray-900 font-bold text-xl mb-2">Fauteuil pioupiou</div>
-                  <p className="text-gray-700 text-base">Description du fauteuil pioupiou: couleur rouge...</p>
-                </div>
+                  <p className="text-gray-700 text-base">Description du fauteuil pioupiou: joli fauteuil de couleur rouge...</p>
                 <div className="flex items-center">
                   <div className="text-sm">
                     <p className="text-gray-900 leading-none">Prix</p>
                     <p className="text-gray-600">Date de publication</p>
+                </div>
                   </div>
                 </div>
               </div>
