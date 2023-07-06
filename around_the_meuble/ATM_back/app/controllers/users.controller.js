@@ -8,7 +8,8 @@ const Users = db.users;
  const jwt = require('jsonwebtoken');
 
 const hashPassword = async (password) =>
-{await bcrypt.hash(password, 10)}
+{let hashedPassword = await bcrypt.hash(password, 10);
+return hashedPassword}
 
 const findUser = async (user) =>
 {await Users.findOne({where: {email: user}})}
@@ -26,25 +27,31 @@ const comparePassword = async (password, hashPassword) =>
   //Creer un USER dans la base de données
   // bcrypt hash le password du "user".
   // Il doit faire 10 tours d'execution (d'itérations) pour hasher le password définit comme le "salt"
-  const hashedPassword = hashPassword(req.body.password);
-  const user = {
-    email: req.body.email,
-    password: hashedPassword,
-    nom: req.body.nom,
-    prenom: req.body.prenom,
-  };
+  const hashedPassword = hashPassword(req.body.password)
+  // console.log(hashedPassword)
+  .then((hashedPassword) =>{
 
-  Users.create(user)
+    console.log(hashedPassword)
+
+    const user = {
+      email: req.body.email,
+      password: hashedPassword,
+      nom: req.body.nom,
+      prenom: req.body.prenom,
+    };
+    
+    Users.create(user)
     .then((data) => {
       res.send(data);
     })
-
+    
     .catch((err) => {
       res.status(500).send({
         message: err.message || "Une erreur a été detectée",
       });
     });
-};
+  })
+  };
 
 exports.getToken = (req, res) => {
   try {
