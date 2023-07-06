@@ -6,7 +6,7 @@ const TableauAdmin = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "http://localhost:5174/api/meubles/allmeubles"
+        "http://localhost:5174/api/meubles/"
       );
       const newData = await response.json();
       setItem(newData);
