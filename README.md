@@ -33,7 +33,7 @@ node server.js
 Aller jusqu'au répertoire de la partie front, installer les dépendances et lancer le serveur
 
 ```
-cd around_the_meuble/ATM_back
+cd projet2
 npm install
 npm run dev
 ```
